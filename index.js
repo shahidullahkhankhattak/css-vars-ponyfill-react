@@ -12,18 +12,20 @@ const isBodySelectorMatched = selector => {
 export const CssVarsPonyfillReact = () => {
   const minified = [...rootElem.querySelectorAll("style")]
     .map(style => style.innerHTML)
-    .join(";")
+    .join("")
     .replace(/[\n][\s]+/g, "");
   const cssBlocks = minified.match(/([^{]+{)([^{^}]*)(})/gi);
   const allMatches = cssBlocks
     .map(cssBlock => {
-      const pattern = /([^{]+)({)((([-a-zA-Z0-9_]+)(:)([^;]+)(;?))*)(})/gm;
-      const [, selector, , insideString] = pattern.exec(cssBlock);
+      const pattern = /([^{]+)({)((([-a-zA-Z0-9_]+)(:)([^;]+)(;?))*)(\s*})/gm;
+      const destructArray = pattern.exec(cssBlock);
+      if (!destructArray) return;
+      const [, selector, , insideString] = destructArray;
       const cssPropsValsMatches = insideString.match(/(--[^:]+)(:)([^;]+)/g);
       if (cssPropsValsMatches) {
         const cssPropsVals = cssPropsValsMatches.map(cssPropVal => {
           const [varName, varVal] = cssPropVal.split(":");
-          return { select: `var(${varName})`, replace: varVal };
+          return { select: `var(${varName})`, replace: varVal.trim() };
         });
         return {
           selector: selector.replace(/ /g, ""),
@@ -51,9 +53,17 @@ export const CssVarsPonyfillReact = () => {
     return cssVar;
   });
 
-  let finalCss = minified;
-  for (var i = 0; i < finalCssVars; i++) {
-    finalCss.replace(finalCssVars[i].select, finalCssVars[i].replace);
+  let finalCss = minified.replace(/\n/g, "");
+  for (var i = 0; i < finalCssVars.length; i++) {
+    let cssVarSelect = finalCssVars[i].select.replace(
+      /[-\/\\^$*+?.()|[\]{}]/g,
+      "\\$&"
+    );
+    let cssVarReplace =
+      finalCssVars[i].replace.indexOf("#") === 0
+        ? finalCssVars[i].replace.substr(0, 7)
+        : finalCssVars[i].replace;
+    finalCss = finalCss.replace(new RegExp(cssVarSelect, "g"), cssVarReplace);
   }
 
   let newCss = rootElem.createElement("style");
