@@ -1,0 +1,32 @@
+{
+  "name": "css-vars-ponyfill-react",
+  "version": "1.0.0",
+  "description": "npm module to remove problems of css vars in un supported browsers e.g Internet explorer 9+",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahidullahkhankhattak/css-vars-ponyfill-react.git"
+  },
+  "keywords": [
+    "var",
+    "ponyfill",
+    "css",
+    "var",
+    "ponyfill",
+    "css",
+    "vars",
+    "fix",
+    "css",
+    "vars",
+    "polyfill"
+  ],
+  "author": "shahid ullah khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahidullahkhankhattak/css-vars-ponyfill-react/issues"
+  },
+  "homepage": "https://github.com/shahidullahkhankhattak/css-vars-ponyfill-react#readme"
+}
