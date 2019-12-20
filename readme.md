@@ -16,7 +16,7 @@ in your main index.js or app.js file use
 
 
 ```
-import {CssVarsPonyfillReact} from 'css-vars-ponyfill-react'
+import {CssVarsPonyfill} from 'css-vars-ponyfill-react'
 ```
 
 and call the function anywhere in your index.js or app.js code
