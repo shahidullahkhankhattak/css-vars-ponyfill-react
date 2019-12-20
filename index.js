@@ -9,7 +9,7 @@ const isBodySelectorMatched = selector => {
   return false;
 };
 
-export const CssVarsPonyfillReact = () => {
+export const CssVarsPonyfill = () => {
   const minified = [...rootElem.querySelectorAll("style")]
     .map(style => style.innerHTML)
     .join("")
