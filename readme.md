@@ -32,3 +32,14 @@ CssVarsPonyfill({
     externalStyleSheets: true
 })
 ```
+
+in case anything goes wrong, you can get the error message with the following callback function.
+
+```
+CssVarsPonyfill({
+    externalStyleSheets: true,
+    onError: (error) => {
+        // your logic here
+    }
+})
+```
