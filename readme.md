@@ -24,3 +24,11 @@ and call the function anywhere in your index.js or app.js code
 ```
 CssVarsPonyfill()
 ```
+
+and if you add external stylesheets as well (mostly required in prod builds) just use it as:
+
+```
+CssVarsPonyfill({
+    externalStyleSheets: true
+})
+```
