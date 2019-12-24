@@ -1,6 +1,6 @@
 {
   "name": "css-vars-ponyfill-react",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "npm module to remove problems of css vars in un supported browsers e.g Internet explorer 9+",
   "main": "index.js",
   "scripts": {
