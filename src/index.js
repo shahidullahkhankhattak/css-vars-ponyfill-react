@@ -103,7 +103,10 @@ export const CssVarsPonyfillReact = params => {
         const includeExternal = params && params.externalStyleSheets;
         const stylesheetLinks = Array.from(document.head.querySelectorAll("[rel='stylesheet']")).map(function(obj) { return obj.href });
         const sheetsLength = stylesheetLinks.length;
-        if(sheetsLength > 0 && includeExternal) recurseStyles(stylesheetLinks, 0, sheetsLength);
+        if(sheetsLength > 0 && includeExternal) 
+            recurseStyles(stylesheetLinks, 0, sheetsLength);
+        else 
+            processPonyfill();
     } catch (ex) {
         if (params && params.onError) {
             params.onError(ex);
