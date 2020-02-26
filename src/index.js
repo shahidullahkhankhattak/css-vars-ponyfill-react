@@ -14,7 +14,7 @@ const isBodySelectorMatched = selector => {
     return false;
 };
 
-export const CssVarsPonyfillReact = params => {
+const CssVarsPonyfillReact = params => {
     try {
         function processPonyfill() {
             if (isNativeSupport) return;
@@ -112,4 +112,8 @@ export const CssVarsPonyfillReact = params => {
             params.onError(ex);
         }
     }
+};
+
+module.exports = {
+  CssVarsPonyfillReact
 };
