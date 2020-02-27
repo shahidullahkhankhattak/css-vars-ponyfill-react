@@ -115,5 +115,5 @@ const CssVarsPonyfillReact = params => {
 };
 
 module.exports = {
-  CssVarsPonyfillReact
+    CssVarsPonyfill: CssVarsPonyfillReact
 };
