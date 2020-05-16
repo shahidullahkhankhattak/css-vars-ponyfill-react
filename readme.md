@@ -1,8 +1,8 @@
 # Css Vars Ponyfill React
 
-[![N|Solid](https://shahidullahkhan.com/images/powered.png)](https://shahidullahkhan.com)
+[![N|Solid](http://shahidullahkhan.com/images/powered.png)](https://shahidullahkhan.com)
 
-[![Build Status](https://shahidullahkhan.com/images/passing.svg)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](http://shahidullahkhan.com/images/passing.svg)](https://travis-ci.org/joemccann/dillinger)
 
 ##### npm module to remove problems of css vars in un supported browsers e.g Internet explorer 9+
 
